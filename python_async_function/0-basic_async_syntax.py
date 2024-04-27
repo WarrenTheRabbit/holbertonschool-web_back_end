@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Defines an async function that waits a random amount of time and then returns the number.
 """
