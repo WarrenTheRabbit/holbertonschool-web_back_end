@@ -39,9 +39,3 @@ export default class Pricing {
     return amount * conversionRate;
   }
 }
-const dollar = new Currency('$', 'Dollar');
-const item = new Pricing(100, dollar);
-console.log(item.amount);
-console.log(item.currency);
-console.log(item.displayFullPrice())
-console.log(dollar.name)
