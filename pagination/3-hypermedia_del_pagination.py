@@ -41,15 +41,15 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """
-        Retrieves a dictionary of paginated data, metadata, and navigation links.
+        Retrieves a dictionary of paginated data, metadata,
+        and navigation links.
         """
         indexed_dataset = self.__indexed_dataset
-        
+
         if index is None:
-            return {}       
+            return {}
         assert index >= 0 and index < len(indexed_dataset)
 
- 
         index = list(indexed_dataset.keys()).index(index)
         data_keys = list(indexed_dataset.keys())[index: index + page_size]
 
@@ -59,7 +59,7 @@ class Server:
 
         # Find actual next index (account for deletions)
         next_index = None
-        for i in range(data_keys[-1]+ 1, len(indexed_dataset)):
+        for i in range(data_keys[-1] + 1, len(indexed_dataset)):
             if i in indexed_dataset:
                 next_index = i
                 break
@@ -70,4 +70,3 @@ class Server:
             "page_size": page_size,
             "data": data,
         }
-        
